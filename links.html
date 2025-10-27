@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Weitere Links</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1 style="margin:0;">About Me</h1>
+            <div class="header-actions">
+                <a href="index.html" class="action-button back-button" title="Zurück">← Zurück</a>
+                <a href="links.html" class="action-button links-button" title="Weitere Links">Links</a>
+                <a href="projekte.html" class="action-button projects-button" title="Projekte">Projekte</a>
+            </div>
+        </div>
+        <button id="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
+    </header>
+
+    <div class="container">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="Logo_VermKV.jpg" alt="Logo VermKV">
+                <a href="https://lvermgeo.rlp.de/" target="_blank" rel="noopener">lvermgeo.rlp.de</a>
+            </div>
+            <div class="gallery-item">
+                <img src="Vermka-Rheinhessen-Nahe.svg" alt="Vermka Rheinhessen-Nahe">
+                <a href="https://vermka-rheinhessen-nahe.rlp.de/" target="_blank" rel="noopener">vermka-rheinhessen-nahe.rlp.de</a>
+            </div>
+            <div class="gallery-item">
+                <img src="hochschule-mainz_fb-technik.png" alt="HS Mainz">
+                <a href="https://www.hs-mainz.de/" target="_blank" rel="noopener">hs-mainz.de</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const root = document.documentElement;
+            const btn = document.getElementById('theme-toggle');
+            const storageKey = 'site-theme';
+
+            function applyTheme(isDark){
+                if(isDark) root.classList.add('dark'); else root.classList.remove('dark');
+                btn.textContent = isDark ? '☀️' : '🌙';
+                btn.setAttribute('aria-pressed', String(isDark));
+            }
+
+            // initial: from localStorage or prefers-color-scheme
+            const saved = localStorage.getItem(storageKey);
+            let isDark = saved ? saved === 'dark' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(isDark);
+
+            btn.addEventListener('click', function(){
+                isDark = !root.classList.contains('dark');
+                applyTheme(isDark);
+                localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
+            });
+        })();
+    </script>
+</body>
+</html>
