@@ -11,30 +11,31 @@
 <body>
     <header>
         <div class="header-inner">
-            <h1 style="margin:0;">About Me</h1>
+            <h1  style="margin:0;">About Me</h1>
             <div class="header-actions">
                 <a href="links.html" class="action-button links-button" title="Weitere Links">Links</a>
                 <a href="projekte.html" class="action-button projects-button" title="Projekte">Projekte</a>
+                <a href="news.html" class="action-button projects-button" title="News">News</a>
             </div>
         </div>
         <button id="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
     </header>
-    <div class="container" style="display: flex;">
+    <div class="container">
         <div>
-            <h2>Huhu, ich bin Lorena!</h2>
-            <p>
+            <h2 class="center-text">Huhu, ich bin Lorena!</h2>
+            <p class="center-text">
                 Herzlich Willkommen auf meiner Homepage! Ich studiere derzeit Geoinformatik und Vermessung. 
-                Weiteres über mich findest du auf meiner GitHub-Seite: 
-                <a href="https://Lorena291.github.io/" target="_blank">Lorena291.github.io</a>.
+                Weiteres über mich findest du hier auf der Seite.
             </p>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: flex-end; max-width: 40%;">
-            <img src="PHOTO-2025-05-02-19-21-17.JPG" style="width: 50%; height: auto;">
-            <p style="margin: 0.5em 0 0 0; text-align: center;">Anni und ich</p>
-        </div>
+    </div>
+
+    <div class="media-center">
+        <img src="PHOTO-2025-05-02-19-21-17.JPG" alt="Anni und ich">
+        <p class="centered-caption">Anni und ich</p>
     </div>
     <div class="container">
-        <h3>Mein Werdegang</h3>
+        <h3 style="text-align: center;">Mein Werdegang</h3>
         <table>
             <thead>
                 <tr>
@@ -46,7 +47,7 @@
             <tbody>
                 <tr>
                     <td>2023 - dato</td>
-                    <td>Student</td>
+                    <td>Studentin</td>
                     <td>Hochschule Mainz</td>
                 </tr>
                 <tr>
@@ -56,7 +57,7 @@
                 </tr>
                 <tr>
                     <td>bis 2019</td>
-                    <td>Schüler</td>
+                    <td>Schülerin</td>
                     <td>Gymansium</td>
                 </tr>
             </tbody>
@@ -99,8 +100,8 @@
             z-index: 1000;
         }
         .corner-btn{
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
