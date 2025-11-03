@@ -135,24 +135,11 @@
         
     
         function geo_json_25536a822a5e8d074b29c6266769f88a_styler(feature) {
-            var name = feature && feature.properties && (feature.properties.name || feature.properties.ADMIN || feature.properties.admin || feature.properties.NAME_EN || feature.properties.name_en || feature.properties.name_long);
-            var green = {"color": "#065f46", "fillColor": "#22c55e", "fillOpacity": 0.6, "weight": 1};
-            // Force these countries to be green (cover common language variants)
-            var nm = (name || "").toLowerCase();
-            var isTarget = (
-                nm === "germany" || nm === "deutschland" ||
-                nm === "spain" || nm === "spanien" || nm === "españa" || nm === "espana" ||
-                nm === "croatia" || nm === "kroatien" || nm === "hrvatska" ||
-                nm === "greece" || nm === "griechenland" || nm === "ελλάδα"
-            );
-            if (isTarget) {
-                return green;
-            }
-            switch(name) {
-                case "Afghanistan": case "Angola": case "Albania": case "United Arab Emirates": case "Argentina": case "Armenia": case "Antarctica": case "French Southern and Antarctic Lands": case "Australia": case "Azerbaijan": case "Burundi": case "Belgium": case "Benin": case "Burkina Faso": case "Bangladesh": case "Bulgaria": case "The Bahamas": case "Bosnia and Herzegovina": case "Belarus": case "Belize": case "Bolivia": case "Brazil": case "Brunei": case "Bhutan": case "Botswana": case "Central African Republic": case "Canada": case "Chile": case "Ivory Coast": case "Cameroon": case "Democratic Republic of the Congo": case "Republic of the Congo": case "Colombia": case "Costa Rica": case "Cuba": case "Northern Cyprus": case "Cyprus": case "Djibouti": case "Dominican Republic": case "Algeria": case "Ecuador": case "Egypt": case "Eritrea": case "Estonia": case "Ethiopia": case "Fiji": case "Falkland Islands": case "Gabon": case "Georgia": case "Ghana": case "Guinea": case "Gambia": case "Guinea Bissau": case "Equatorial Guinea": case "Greece": case "Greenland": case "Guatemala": case "Guyana": case "Honduras": case "Croatia": case "Haiti": case "Hungary": case "Indonesia": case "India": case "Ireland": case "Iran": case "Iraq": case "Israel": case "Jamaica": case "Jordan": case "Kazakhstan": case "Kenya": case "Kyrgyzstan": case "Cambodia": case "South Korea": case "Kosovo": case "Kuwait": case "Laos": case "Lebanon": case "Liberia": case "Libya": case "Sri Lanka": case "Lesotho": case "Lithuania": case "Luxembourg": case "Latvia": case "Morocco": case "Moldova": case "Madagascar": case "Mexico": case "Macedonia": case "Mali": case "Myanmar": case "Montenegro": case "Mongolia": case "Mozambique": case "Mauritania": case "Malawi": case "Malaysia": case "Namibia": case "New Caledonia": case "Niger": case "Nigeria": case "Nicaragua": case "Nepal": case "New Zealand": case "Oman": case "Pakistan": case "Panama": case "Peru": case "Philippines": case "Papua New Guinea": case "Puerto Rico": case "North Korea": case "Paraguay": case "Qatar": case "Romania": case "Russia": case "Rwanda": case "Western Sahara": case "Saudi Arabia": case "Sudan": case "South Sudan": case "Senegal": case "Solomon Islands": case "Sierra Leone": case "El Salvador": case "Somaliland": case "Somalia": case "Republic of Serbia": case "Suriname": case "Slovakia": case "Slovenia": case "Swaziland": case "Syria": case "Chad": case "Togo": case "Thailand": case "Tajikistan": case "Turkmenistan": case "East Timor": case "Trinidad and Tobago": case "Tunisia": case "Turkey": case "Taiwan": case "United Republic of Tanzania": case "Uganda": case "Ukraine": case "Uruguay": case "Uzbekistan": case "Venezuela": case "Vietnam": case "Vanuatu": case "West Bank": case "Yemen": case "South Africa": case "Zambia": case "Zimbabwe": 
+            switch(feature.properties.name) {
+                case "Afghanistan": case "Angola": case "Albania": case "United Arab Emirates": case "Argentina": case "Armenia": case "Antarctica": case "French Southern and Antarctic Lands": case "Australia": case "Azerbaijan": case "Burundi": case "Benin": case "Burkina Faso": case "Bangladesh": case "The Bahamas": case "Belarus": case "Belize": case "Bolivia": case "Brazil": case "Brunei": case "Bhutan": case "Botswana": case "Central African Republic": case "Canada":case "China": case "Chile": case "Ivory Coast": case "Cameroon": case "Democratic Republic of the Congo": case "Republic of the Congo": case "Colombia": case "Costa Rica": case "Cuba": case "Northern Cyprus": case "Cyprus": case "Djibouti": case "Dominican Republic": case "Algeria": case "Ecuador": case "Egypt": case "Eritrea": case "Estonia": case "Ethiopia": case "Fiji": case "Falkland Islands": case "Gabon": case "Georgia": case "Ghana": case "Guinea": case "Gambia": case "Guinea Bissau": case "Equatorial Guinea": case "Greenland": case "Guatemala": case "Guyana": case "Honduras": case "Haiti": case "Hungary": case "Indonesia": case "India": case "Ireland": case "Iran": case "Iraq": case "Israel": case "Jamaica": case "Jordan": case "Kazakhstan": case "Kenya": case "Kyrgyzstan": case "Cambodia": case "South Korea": case "Kosovo": case "Kuwait": case "Laos": case "Lebanon": case "Liberia": case "Libya": case "Sri Lanka": case "Lesotho": case "Lithuania": case "Latvia": case "Morocco": case "Moldova": case "Madagascar": case "Mexico": case "Macedonia": case "Mali": case "Myanmar": case "Montenegro": case "Mongolia": case "Mozambique": case "Mauritania": case "Malawi": case "Malaysia": case "Namibia": case "New Caledonia": case "Niger": case "Nigeria": case "Nicaragua": case "Nepal": case "New Zealand": case "Oman": case "Pakistan": case "Panama": case "Peru": case "Philippines": case "Papua New Guinea": case "Puerto Rico": case "North Korea": case "Paraguay": case "Qatar": case "Romania": case "Russia": case "Rwanda": case "Western Sahara": case "Saudi Arabia": case "Sudan": case "South Sudan": case "Senegal": case "Solomon Islands": case "Sierra Leone": case "El Salvador": case "Somaliland": case "Somalia": case "Republic of Serbia": case "Suriname": case "Slovakia": case "Swaziland": case "Syria": case "Chad": case "Togo": case "Thailand": case "Tajikistan": case "Turkmenistan": case "East Timor": case "Trinidad and Tobago": case "Tunisia": case "Turkey": case "Taiwan": case "United Republic of Tanzania": case "Uganda": case "Ukraine": case "Uruguay": case "Uzbekistan": case "Venezuela": case "Vietnam": case "Vanuatu": case "West Bank": case "Yemen": case "South Africa": case "Zambia": case "Zimbabwe": case "United States of America": case "Norway": case "Sweden": case "Finland": case "Denmark": case "Iceland": case "Japan": case "Portugal": case "Poland" : case "Czech Republic":
                     return {"color": "#334155", "fillColor": "#94a3b8", "fillOpacity": 0.15, "weight": 0.5};
                 default:
-                    return green;
+                    return {"color": "#065f46", "fillColor": "#22c55e", "fillOpacity": 0.6, "weight": 1};
             }
         }
         function geo_json_25536a822a5e8d074b29c6266769f88a_highlighter(feature) {
@@ -178,16 +165,13 @@
                 },
             });
         };
-    var geo_json_25536a822a5e8d074b29c6266769f88a = L.geoJson(null, {
+        var geo_json_25536a822a5e8d074b29c6266769f88a = L.geoJson(null, {
                 onEachFeature: geo_json_25536a822a5e8d074b29c6266769f88a_onEachFeature,
             
                 style: geo_json_25536a822a5e8d074b29c6266769f88a_styler,
             ...{
 }
         });
-
-    // Make sure the GeoJSON layer is added to the map
-    geo_json_25536a822a5e8d074b29c6266769f88a.addTo(map_3a4f824ea2978b3389f5f3e1419fa17f);
 
         function geo_json_25536a822a5e8d074b29c6266769f88a_add (data) {
             geo_json_25536a822a5e8d074b29c6266769f88a
