@@ -205,24 +205,30 @@ th { background-color: var(--th-bg); }
 .map-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    gap: 0.25rem; /* even tighter spacing */
+    margin-top: 0.6rem; /* reduce top spacing */
 }
 .map-grid-two{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    /* two centered columns with a comfortable max width */
+    grid-template-columns: repeat(2, minmax(220px, 480px));
+    gap: 0.25rem; /* small gap between cards */
+    margin-top: 0.4rem;
+    justify-content: center; /* center the whole grid in the container */
+    justify-items: center; /* center items inside each column */
+    align-items: start;
 }
 .map-card{
     background: var(--card-bg);
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0.5rem; /* even less padding */
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.4rem;
+    max-width: 460px; /* match column max so cards fill columns but remain centered */
+    width: 100%;
 }
 .map-card h3{
     margin: 0;
@@ -231,7 +237,7 @@ th { background-color: var(--th-bg); }
 }
 .map-frame{
     width: 100%;
-    height: 400px;
+    height: 300px; /* slightly reduced height */
     border: 1px solid #ddd;
     border-radius: 6px;
     background: #f9f9f9;
